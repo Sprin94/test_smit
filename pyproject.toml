@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "test-smit"
+version = "0.1.0"
+description = ""
+authors = ["Andrei Rostovtsev <105871945+Sprin94@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.100.0"
+pydantic = "^2.0.3"
+uvicorn = "^0.23.0"
+tortoise-orm = {extras = ["asyncpg"], version = "^0.19.3"}
+pydantic-settings = "^2.0.2"
+aerich = "^0.7.1"
+
+
+
+[tool.aerich]
+tortoise_orm = "app.core.config.TORTOISE_ORM"
+location = "./migrations"
+src_folder = "./."
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
